@@ -1,0 +1,53 @@
+//Problem: Coverage of all Zeros in a Binary Matrix
+//Topic: Matrix, Simulation, Implementation
+//Patterh: Easy
+
+class Solution {
+  public:
+    int findCoverage(vector<vector<int>>& mat) {
+        int n = mat.size();
+        int m = mat[0].size();
+        int ans = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (mat[i][j] == 0) {
+                    // Left
+                    for (int k = j - 1; k >= 0; k--) {
+                        if (mat[i][k] == 1) {
+                            ans++;
+                            break;
+                        }
+                    }
+
+                    // Right
+                    for (int k = j + 1; k < m; k++) {
+                        if (mat[i][k] == 1) {
+                            ans++;
+                            break;
+                        }
+                    }
+
+                    // Up
+                    for (int k = i - 1; k >= 0; k--) {
+                        if (mat[k][j] == 1) {
+                            ans++;
+                            break;
+                        }
+                    }
+
+                    // Down
+                    for (int k = i + 1; k < n; k++) {
+                        if (mat[k][j] == 1) {
+                            ans++;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        return ans;
+        
+    }
+};
