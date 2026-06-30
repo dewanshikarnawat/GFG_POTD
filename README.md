@@ -97,7 +97,7 @@ g++ -O2 -o solution Medium_Problems/<filename>.cpp
 |---|---|
 | 🟡 Medium | ✅ Active |
 | 🟢 Easy | ✅ Active |
-| 🔴 Hard | 🔜 Coming Soon |
+| 🔴 Hard | ✅ Active |
 
 ---
 
